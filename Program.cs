@@ -11,6 +11,7 @@ namespace Cronometro
         }
 
         static void Menu()
+
         {
             Console.Clear();
             Console.WriteLine("S - Contar Segundos 10s = 10 segundos");
@@ -32,8 +33,23 @@ namespace Cronometro
             {
                 Environment.Exit(0);
             }
-            Start(time * multiplier);
+            PreStart(time * multiplier);
 
+        }
+
+        static void PreStart(int time)
+        {
+            Console.Clear();
+            Console.WriteLine("Ready...");
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.WriteLine("Set...");
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.WriteLine("Go...");
+            Thread.Sleep(2500);
+
+            Start(time);
         }
         static void Start(int time)
         {
